@@ -7,6 +7,7 @@ def send_whatsapp(to_number, message_body):
     account_sid = config("TWILIO_ACCOUNT_SID")
     auth_token = config("TWILIO_AUTH_TOKEN")
     from_number = config("TWILIO_WHATSAPP_FROM")  # e.g. whatsapp:+17372508034
+    content_sid = config("TWILIO_CONTENT_SID")
 
     url = f"https://api.twilio.com/2010-04-01/Accounts/{account_sid}/Messages.json"
     to_whatsapp = to_number if to_number.startswith("whatsapp:") else f"whatsapp:+{to_number.lstrip('+')}"
@@ -14,7 +15,8 @@ def send_whatsapp(to_number, message_body):
     payload = {
         "To": to_whatsapp,
         "From": from_number,
-        "Body": message_body,
+        "ContentSid": content_sid,
+        "ContentVariables": '{"1":"29 October 2026","2":"3:00 PM"}',
     }
     resp = requests.post(url, data=payload, auth=(account_sid, auth_token))
     return resp.status_code, resp.text
