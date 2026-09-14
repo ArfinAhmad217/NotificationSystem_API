@@ -87,8 +87,8 @@ npm install
 npm run dev
 ```
 
-Open `http://localhost:3000` for the demo site and
-`http://localhost:8000/admin/` for the admin panel.
+Open `https://notification-system-frontend-kappa.vercel.app/` for the demo site and
+`https://notificationsystem-api.onrender.com/admin/` for the admin panel.
 
 ## Known Limitations / Notes
 
@@ -111,8 +111,8 @@ Open `http://localhost:3000` for the demo site and
 
 ## Live URLs
 
-- Backend (Render): _TBD_
-- Frontend (Vercel): _TBD_
+- Backend (Render): (https://notificationsystem-api.onrender.com/admin/)
+- Frontend (Vercel): https://notification-system-frontend-kappa.vercel.app/
 
 ## Walkthrough Video
 
